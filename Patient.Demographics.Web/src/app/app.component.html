@@ -1,0 +1,110 @@
+
+<table class="table">
+  <thead>
+      <th>Name</th>
+      <th>LastName</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>MobileNumber</th>
+      <th>PhoneNumber</th>
+      <th>WorkNumber</th>
+      <th>DateOfBirth</th>
+  </thead>
+  <tbody>
+      <tr *ngFor="let hero of userlist">
+          <td>{{hero.FirstName}}</td>
+          <td>{{hero.LastName}}</td>
+          <td>{{hero.Gender}}</td>
+          <td>{{hero.MobileNumber}}</td>
+          <td>{{hero.PhoneNumber}}</td>
+          <td>{{hero.WorkNumber}}</td>
+          <td>{{hero.DateOfBirth}}</td>
+
+      </tr>
+  </tbody>
+</table>
+<form [formGroup]="userform">
+  <fieldset>
+     
+        <div class="form-group row">
+          <label class="col-2 col-form-label">First Name: *</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="firstName"  class='form-control'    placeholder="Enter First Name">
+           
+            <div class="form-control-feedback">
+              <p *ngIf="(userform.controls.firstName.touched ||userform.controls.firstName.dirty) " class="text-danger">* Please enter name</p>
+                  </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Last Name: *</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="lastName"  class='form-control'   placeholder="Enter Last Name">
+           
+            <div class="form-control-feedback">
+              <p *ngIf="(userform.controls.lastName.touched ||userform.controls.lastName.dirty) " class="text-danger">* Please enter name</p>
+                  </div>
+          </div>
+        </div>
+       
+
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Date Of Birth: *</label>
+            <div class="col-sm-8">
+              <input type="text" formControlName="dateOfBirth"  class='form-control'   placeholder="Enter DateOfBirth">
+           
+              <div class="form-control-feedback">
+                <p *ngIf="(userform.controls.dateOfBirth.touched ||userform.controls.dateOfBirth.dirty) " class="text-danger">* Please enter name</p>
+                    </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Gender: *</label>
+               <div class="col-sm-8">
+                  <select class="form-control"  required formControlName="gender" >
+                  <option *ngFor="let item of genderlist" [value]="item.value" >{{item.name}} </option>
+              </select>
+              <div class="form-control-feedback">
+                <p *ngIf="userform.controls.gender.errors && (userform.controls.gender.touched ||userform.controls.gender.dirty) " class="text-danger">* Please enter Description</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Mobile Number: *</label>
+               <div class="col-sm-8">
+                <input type="text" formControlName="mobileNumber"  class='form-control'    placeholder="Enter Mobile Num">
+         
+              <div class="form-control-feedback">
+                <p *ngIf="userform.controls.mobileNumber.errors && (userform.controls.mobileNumber.touched ||userform.controls.mobileNumber.dirty) " class="text-danger">* Please enter Mobile Number</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Work Number: *</label>
+               <div class="col-sm-8">
+                <input type="text" formControlName="workNumber"  class='form-control'    placeholder="Enter Work Num">
+         
+              <div class="form-control-feedback">
+                <p *ngIf="userform.controls.workNumber.errors && (userform.controls.workNumber.touched ||userform.controls.workNumber.dirty) " class="text-danger">* Please enter Work Number</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Home Number: *</label>
+               <div class="col-sm-8">
+                <input type="text" formControlName="homeNumber"  class='form-control'    placeholder="Enter Home Num">
+         
+              <div class="form-control-feedback">
+                <p *ngIf="userform.controls.homeNumber.errors && (userform.controls.homeNumber.touched ||userform.controls.homeNumber.dirty) " class="text-danger">* Please enter Home Number</p>
+              </div>
+            </div>
+          </div>
+  
+    <div class="form-group ">
+      <label class="col-lg-3 col-form-label form-control-label"></label>
+      <div class="col-lg-9">
+        <input type="button" class="btn btn-primary " value="Save" [disabled]="!userform.valid " (click)="Submit()">
+          </div>
+    </div>
+  </fieldset>
+</form>

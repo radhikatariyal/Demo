@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7D30430-AE64-4273-9870-400978036026}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BIWorldwide.GPSM.Service</RootNamespace>
+    <AssemblyName>BIWorldwide.GPSM.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.13.5.0\lib\net40-client\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MassTransit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.3.4.1\lib\net452\MassTransit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MassTransit.RabbitMqTransport, Version=3.4.0.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.RabbitMQ.3.4.1\lib\net452\MassTransit.RabbitMqTransport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MassTransit.WindsorIntegration, Version=3.4.0.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.CastleWindsor.3.4.1\lib\net452\MassTransit.WindsorIntegration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NewId, Version=2.1.3.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\NewId.2.1.3\lib\net45\NewId.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz, Version=2.3.3.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.3.3\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.4.0.1\lib\net451\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Abstractions, Version=2.0.0.143, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.IO.Abstractions.2.0.0.143\lib\net40\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=3.3.154.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Topshelf.3.3.1\lib\net40-full\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DebugConsole.cs" />
+    <Compile Include="FileUploads\Importers\Category\CategoryImportPersistance.cs" />
+    <Compile Include="FileUploads\Importers\Category\CategoryUploadImporter.cs" />
+    <Compile Include="FileUploads\Importers\Products\FltProductImporter.cs" />
+    <Compile Include="FileUploads\ImportStatusQueue.cs" />
+    <Compile Include="FileUploads\Validators\CategoryUploadValidator.cs" />
+    <Compile Include="FileUploads\Validators\FltProductUploadValidator.cs" />
+    <Compile Include="WindsorInstallers\ImportersInstaller.cs" />
+    <Compile Include="WindsorInstallers\ServiceWindsorInstaller.cs" />
+    <Compile Include="ConsumerServices\ErrorLogConsumerService.cs" />
+    <Compile Include="ConsumerServices\UploadStatusConsumerService.cs" />
+    <Compile Include="EventHandlers\UploadNotificationEventHandler.cs" />
+    <Compile Include="Exceptions\UploadImportException.cs" />
+    <Compile Include="Exceptions\UploadValidationException.cs" />
+    <Compile Include="FileUploads\IHandleUpload.cs" />
+    <Compile Include="FileUploads\Importers\ImportPersistanceBase.cs" />
+    <Compile Include="FileUploads\Importers\NotificationUtilities.cs" />
+    <Compile Include="FileUploads\IUploadImporter.cs" />
+    <Compile Include="FileUploads\IUploadImporterFactory.cs" />
+    <Compile Include="FileUploads\IUploadsNotifier.cs" />
+    <Compile Include="FileUploads\IUploadStatusChangeQueue.cs" />
+    <Compile Include="FileUploads\IUploadValidator.cs" />
+    <Compile Include="FileUploads\IUploadValidatorFactory.cs" />
+    <Compile Include="FileUploads\RowReader.cs" />
+    <Compile Include="FileUploads\RowToImport.cs" />
+    <Compile Include="FileUploads\RowToImportMapper.cs" />
+    <Compile Include="FileUploads\UploadImporterFactory.cs" />
+    <Compile Include="FileUploads\UploadValidatorFactory.cs" />
+    <Compile Include="FileUploads\ValidationStatusQueue.cs" />
+    <Compile Include="FileUploads\Validators\ColumnChecker.cs" />
+    <Compile Include="FileUploads\Validators\UploadValidatorBase.cs" />
+    <Compile Include="FileUploads\Validators\UploadValidatorCore.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\DateCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\DateLessThenOrEqualCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\DecimalCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\DisallowedValueCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\DuplicateExternalIdentifierCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\DuplicateFieldValueCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\EmailCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\FieldValue.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\FieldValueCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\IColumnValidationCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\IntegerCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\IRowValidationCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\RequiredFieldCheck.cs" />
+    <Compile Include="FileUploads\Validators\ValidationChecks\TextCheck.cs" />
+    <Compile Include="ISchedulingService.cs" />
+    <Compile Include="IServiceSettings.cs" />
+    <Compile Include="IStartup.cs" />
+    <Compile Include="Jobs\Emails\EmailJobSettings.cs" />
+    <Compile Include="Jobs\Emails\IEmailSchedule.cs" />
+    <Compile Include="Jobs\JobFactory.cs" />
+    <Compile Include="Jobs\SchedulerFactory.cs" />
+    <Compile Include="Queues\UploadStatusConsumer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Notifiers\RestUploadNotifier.cs" />
+    <Compile Include="Queues\UploadStatusFaultConsumer.cs" />
+    <Compile Include="SchedulingService.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WindsorInstallers\ConsumerServicesInstaller.cs" />
+    <Compile Include="WindsorInstallers\QueueInstaller.cs" />
+    <Compile Include="WindsorInstallers\ServiceContainer.cs" />
+    <Compile Include="WindsorInstallers\ServiceInstaller.cs" />
+    <Compile Include="WindsorInstallers\ValidationInstaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Commands\Patient.Demographics.Commands.csproj">
+      <Project>{53B304A5-F5A0-4D9C-940D-42AC03697FF1}</Project>
+      <Name>Patient.Demographics.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Common\Patient.Demographics.Common.csproj">
+      <Project>{f577cecd-9c54-418c-af1c-3f218d0b246c}</Project>
+      <Name>Patient.Demographics.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Configuration\Patient.Demographics.Configuration.csproj">
+      <Project>{ED9483B5-8248-4ADC-BA15-D954ECDAAE43}</Project>
+      <Name>Patient.Demographics.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.CrossCutting\Patient.Demographics.CrossCutting.csproj">
+      <Project>{53B4A661-4C3F-4DAB-BAFD-0C1CBF543BDB}</Project>
+      <Name>Patient.Demographics.CrossCutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Data\Patient.Demographics.Data.csproj">
+      <Project>{5F503ADC-5A9A-4F72-95E1-54E479E342F1}</Project>
+      <Name>Patient.Demographics.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Domain\Patient.Demographics.Domain.csproj">
+      <Project>{3E892452-CA9A-4EEE-A202-E059FBE510CF}</Project>
+      <Name>Patient.Demographics.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Events\Patient.Demographics.Events.csproj">
+      <Project>{a5506120-a4ce-4132-89ad-2b7e68cdf089}</Project>
+      <Name>Patient.Demographics.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Infrastructure\Patient.Demographics.Infrastructure.csproj">
+      <Project>{6A857CC4-2C21-4C90-A1C8-CEA1D538DC3F}</Project>
+      <Name>Patient.Demographics.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Queries\Patient.Demographics.Queries.csproj">
+      <Project>{9B5B9FF1-FB8E-408B-B8D4-CDAC0BD6ADDA}</Project>
+      <Name>Patient.Demographics.Queries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIWorldwide.GPSM.Repository\Patient.Demographics.Repository.csproj">
+      <Project>{DB3F42E5-6611-4920-889D-8EC930183232}</Project>
+      <Name>Patient.Demographics.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\OctoPack.3.4.7\tools\OctoPack.targets" Condition="Exists('..\packages\OctoPack.3.4.7\tools\OctoPack.targets')" />
+  <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">
+    <Error Condition="!Exists('..\packages\OctoPack.3.4.7\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="You are trying to build with OctoPack, but the NuGet targets file that OctoPack depends on is not available on this computer. This is probably because the OctoPack package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\OctoPack.3.4.7\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="OctoPack cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
