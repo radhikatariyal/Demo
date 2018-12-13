@@ -25,7 +25,7 @@ namespace Patient.Demographics.Domain
             return new User(id, forename, suname, dateofbirth, gender, mobileNm, phoneNum, workNum);
         }
 
-
+        //Laod Event o create a new user 
         public static User CreateNewUser(string forename, string suname, string dateofbirth, bool gender, string mobileNm, string homeNumber, string workNum)
         {
             var user = new User

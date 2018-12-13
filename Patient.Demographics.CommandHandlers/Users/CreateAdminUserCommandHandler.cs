@@ -22,7 +22,7 @@ namespace Patient.Demographics.CommandHandlers.Users
             _repository = repository;
             _userRepository = userSetRepository;
         }
-
+       
         public async Task HandleAsync(CreateAdminUserCommand command)
         {
               ArgumentValidator.EnsureIsNotNull(command, nameof(command));

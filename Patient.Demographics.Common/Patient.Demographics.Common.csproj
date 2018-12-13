@@ -99,16 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActiveDirectoryAuthentication\ActiveDirectoryModel.cs" />
-    <Compile Include="DataTable\ListtoDataTableConverter.cs" />
-    <Compile Include="Excel\ExcelCategory.cs" />
-    <Compile Include="Excel\ExcelProductFile.cs" />
-    <Compile Include="Excel\ExcelUtility.cs" />
     <Compile Include="MarkupOn.cs" />
     <Compile Include="Configuration\AuthenticationServerConfigSettings.cs" />
-    <Compile Include="Csv\CsvHelperFactory.cs" />
-    <Compile Include="Csv\CsvParserExtensions.cs" />
-    <Compile Include="Extensions\ListExtensions.cs" />
-    <Compile Include="Extensions\TreeHelper.cs" />
     <Compile Include="Interfaces\IAutoMapperSetup.cs" />
     <Compile Include="Interfaces\ILocalisedContentView.cs" />
     <Compile Include="Interfaces\ILocalisedSection.cs" />
@@ -123,10 +115,6 @@
     <Compile Include="Settings\IFileLibrarySettings.cs" />
     <Compile Include="Settings\IMessageQueueSettings.cs" />
     <Compile Include="Settings\IWebsiteSettings.cs" />
-    <Compile Include="Extensions\CollectionExtensions.cs" />
-    <Compile Include="Extensions\DateTimeOffsetExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Extensions\TimeZoneHelper.cs" />
     <Compile Include="Identifier.cs" />
     <Compile Include="PathHelpers\PathBuilder.cs" />
     <Compile Include="PathHelpers\PathCleanser.cs" />

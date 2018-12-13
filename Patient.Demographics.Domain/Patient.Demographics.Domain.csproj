@@ -74,7 +74,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
     <Compile Include="AggregateRoot.cs" />
     <Compile Include="AggregateState.cs" />
     <Compile Include="IEventProvider.cs" />

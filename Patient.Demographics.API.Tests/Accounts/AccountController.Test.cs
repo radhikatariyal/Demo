@@ -1,25 +1,17 @@
-﻿using Patient.Demographics.Commands;
-using Patient.Demographics.CrossCutting.Identity;
-using Patient.Demographics.Repository.Repositories;
+﻿
 using Patient.Demographics.Web.API.Controllers.Accounts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Microsoft.AspNet.Identity;
 using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Http.ModelBinding;
-using System.Web.Http.Results;
 using Xunit;
+using Patient.Demographics.Repository.Repositories;
+using Patient.Demographics.CrossCutting.Identity;
+using Patient.Demographics.Commands;
+using BIWorldwide.GPSM.Tests.Common;
+using Patient.Demographics.Repository.Dtos.Users;
+using System.Net;
+
 namespace Patient.Demographics.API.Tests.Accounts
 {
     class AccountsControllerTests
@@ -35,12 +27,9 @@ namespace Patient.Demographics.API.Tests.Accounts
         public AccountsControllerTests()
         {
             _userRepository = Substitute.For<IUserRepository>();
-            _commandExecutor = Substitute.For<ICommandExecutor>();
-            _identityUserService = Substitute.For<IIdentityUserService>();
-            _userAccountRepository = Substitute.For<IUserAccountRepository>();
-            _communicationRepository = Substitute.For<ICommunicationRepository>();
-
-            _sut = new AccountsController(_commandExecutor, _userRepository, _identityUserService, _userAccountRepository, _communicationRepository)
+            _commandExecutor = Substitute.For<ICommandExecutor>();   
+           
+            _sut = new AccountsController(_commandExecutor, _userRepository)
             {
                 ControllerContext = ControllersHelper.CreateControllerContext()
             };
@@ -56,11 +45,11 @@ namespace Patient.Demographics.API.Tests.Accounts
             _userRepository.GetUserByIdAsync(Arg.Any<Guid>()).Returns(Task.Run<UserDto>(() => (UserDto)null));
 
             //Act
-            var result = await _sut.GetAdmin(Guid.NewGuid());
-            var response = await result.ExecuteAsync(new CancellationToken());
+            var result = await _sut.GetAllUsers();
+            
 
             //Assert
-            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+            Assert.Equal(HttpStatusCode.Found, result.StatusCode);
         }
 
     }

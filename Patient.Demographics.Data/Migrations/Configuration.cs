@@ -1,17 +1,10 @@
-using Patient.Demographics.Common;
-using Patient.Demographics.Common.Configuration;
 using Patient.Demographics.CrossCutting.Identity;
-using Patient.Demographics.Data.Identity;
-using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
+
 using System.Data.Entity.Migrations;
 using System.Linq;
 using Patient.Demographics.Data.Entities;
-using System.Text;
-using Patient.Demographics.Repository.Dtos;
-using System.Collections.Generic;
-using System.Globalization;
+
 namespace Patient.Demographics.Data.Migrations
 {
     public sealed class Configuration : DbMigrationsConfiguration<SqlDataContext>

@@ -37,30 +37,30 @@ namespace Patient.Demographics.Web.API.Controllers.Accounts
         private readonly IUserRepository _userRepository;
         private readonly IIdentityUserService _identityUserService;
 
-        //public AccountsController()
-
-        //{
-           
-        //}
         public AccountsController(
-            ICommandExecutor commandExecutor,
-            IUserRepository userRepository,
-            IIdentityUserService identityUserService
+            ICommandExecutor commandExecutor,//injectinng commandExecutor to execute command
+            IUserRepository userRepository//injectinng userrepo
+
            )
 
         {
             _commandExecutor = commandExecutor;
             _userRepository = userRepository;
-            _identityUserService = identityUserService;
-           
-           
+
+
         }
+
+        //Fetch all users records 
         [HttpGet]
         [Route("getAllUsers", Name = "getAllUsers")]
         public async Task<HttpResponseMessage> GetAllUsers()
         {
             List<UserDto> UserDtoColl = new List<UserDto>();
             UserDtoColl = await _userRepository.GetUsers();
+            if (UserDtoColl == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
             return new HttpResponseMessage()
             {
                 Content = new StringContent(
@@ -70,10 +70,12 @@ namespace Patient.Demographics.Web.API.Controllers.Accounts
           )
             };
         }
-        [HttpPost]        
+
+        //Create new User
+        [HttpPost]
         public async Task<IHttpActionResult> CreateUser(CreateAdminUserCommand command)
         {
-            
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -84,21 +86,25 @@ namespace Patient.Demographics.Web.API.Controllers.Accounts
             return Ok();
         }
 
+        //get user by Id
         [Route("admins/{id:guid}", Name = "GetAdminById")]
         public async Task<HttpResponseMessage> GetAdmin(Guid id)
         {
             List<UserDto> UserDtoColl = new List<UserDto>();
-            UserDto l  = await _userRepository.GetUserByIdAsync(id);
+            UserDto user = await _userRepository.GetUserByIdAsync(id);
+            if (user == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
             return new HttpResponseMessage()
             {
                 Content = new StringContent(
-              XmlSerializeObject.SerializeObject(l),
+              XmlSerializeObject.SerializeObject(user),
               Encoding.UTF8,
               "text/html"
           )
             };
-           // return Request.CreateResponse(HttpStatusCode.OK, XmlSerializeObject.SerializeObject(l), Configuration.Formatters.XmlFormatter);
-            
+
         }
 
         public string CreateXML(Object YourClassObject)

@@ -306,7 +306,6 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\Accounts\AccountsController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
-    <Compile Include="Controllers\WarmupController.cs" />
     <Compile Include="CreatedResult.cs" />
     <Compile Include="Filters\DecodeJwtCookieIntoIdentity.cs" />
     <Compile Include="Helpers\GPSMAntiForgeryToken.cs" />

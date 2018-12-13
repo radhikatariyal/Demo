@@ -84,9 +84,7 @@
     <Compile Include="CommandException.cs" />
     <Compile Include="ICommandValidator.cs" />
     <Compile Include="Command.cs" />
-    <Compile Include="Users\CreateAdminAdUserCommand.cs" />
     <Compile Include="Users\CreateAdminUserCommand.cs" />
-    <Compile Include="Users\ActivateUserCommand.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ICommandExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
